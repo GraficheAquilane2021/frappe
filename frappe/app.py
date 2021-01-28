@@ -253,6 +253,7 @@ def serve(port=8000, profile=False, no_reload=False, no_threading=False, site=No
 		log.setLevel(logging.ERROR)
 
 	run_simple('0.0.0.0', int(port), application,
+		reloader_type='stat',
 		use_reloader=False if in_test_env else not no_reload,
 		use_debugger=not in_test_env,
 		use_evalex=not in_test_env,
